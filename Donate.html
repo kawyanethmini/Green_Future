@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>GreenFuture Foundation </title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Marcellus:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+</head>
+
+<body class="Donate-page">
+
+  <header id="header" class="header d-flex align-items-center position-relative">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.jpg" alt="AgriCulture">
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="project.html">Projects</a></li>
+          <li><a href="Get-Involved.php">Get-Involved</a></li>
+          <li><a href="Donate.html" class="active">Donate</a></li>
+          <li><a href="news.php">News & Events</a></li>
+          <li><a href="contact.php">Contact</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+       <!-- Hero Section -->
+       <section id="hero" class="hero section dark-background">
+        <div id="hero-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+          <div class="carousel-item active">
+            <img src="assets/img/Background05.jpg" alt="">
+            <div class="carousel-container">
+              <h2><b>Make a Donation</b></h2>
+              <h5 class="text-center">
+                Your contribution will help us continue our projects to protect the environment. 
+                Together, we can create a sustainable future.
+              </h5>
+      
+              <form action="#" method="POST" id="donation-form">
+                <label for="amount">Donation Amount:</label>&nbsp;&nbsp;
+                <input type="number" id="amount" name="amount" required>&nbsp;&nbsp;&nbsp;&nbsp;
+      
+                <label for="payment">Payment Method:</label>&nbsp;&nbsp;
+                <select id="payment" name="payment">
+                  <option value="credit_card">Credit Card</option>
+                  <option value="paypal">PayPal</option>
+                </select>
+                <br><br>
+      
+                <div class="text-center">
+                  <button type="submit" class="btn" id="donate-btn">Donate</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Credit Card Modal -->
+      <div id="credit-card-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Enter Credit Card Details</h2>
+          <form action="/process_payment" method="POST" class="container p-4">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="card_number" class="form-label">Card Number:</label>
+                <input type="text" id="card_number" name="card_number" class="form-control" placeholder="1234 5678 9012 3456" required>
+              </div>
+            </div>
+      
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="expiry_date" class="form-label">Expiry Date:</label>
+                <input type="text" id="expiry_date" name="expiry_date" class="form-control" placeholder="MM/YY" required>
+              </div>
+              <div class="col-md-6">
+                <label for="cvv" class="form-label">CVV:</label>
+                <input type="text" id="cvv" name="cvv" class="form-control" placeholder="123" required>
+              </div>
+            </div>
+      
+            <div class="row text-center">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary w-100">Pay Now</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <!-- PayPal Modal -->
+      <div id="paypal-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Enter PayPal Details</h2>
+          <form action="/process_paypal" method="POST" class="container p-4">
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="paypal_email" class="form-label">PayPal Email:</label>
+                <input type="email" id="paypal_email" name="paypal_email" class="form-control" placeholder="your-email@example.com" required>
+              </div>
+            </div>
+      
+            <div class="row mb-3">
+              <div class="col-md-12">
+                <label for="paypal_password" class="form-label">PayPal Password:</label>
+                <input type="password" id="paypal_password" name="paypal_password" class="form-control" placeholder="Enter Password" required>
+              </div>
+            </div>
+      
+            <div class="row text-center">
+              <div class="col-md-12">
+                <button type="submit" class="btn btn-primary w-100">Proceed with PayPal</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    <!-- Donation Tracker Section -->
+<section id="donation-tracker" class="progress-bar-section">
+    <center>
+    <h2>Donation Tracker</h2>
+</center>
+    <div class="tracker">
+        <p>Help us reach our goal of $100,000 for reforestation!</p>
+        <div class="progress-bar">
+            <div class="progress" style="width: 60%;">$60,000 raised</div>
+        </div>
+    </div>
+</section>
+
+<footer id="footer" class="footer dark-background">
+
+    <div class="copyright text-center">
+      <div class="container d-flex flex-column flex-lg-row justify-content-center justify-content-lg-between align-items-center">
+
+        <div class="d-flex flex-column align-items-center align-items-lg-start">
+          <div>
+            © Copyright <strong><span>GreenFuture Foundation</span></strong>. All Rights Reserved
+          </div>
+          <div class="credits">
+          
+            Designed by <a href="#">Kawya Nethmini</a>
+          </div>
+        </div>
+
+        <div class="social-links order-first order-lg-last mb-3 mb-lg-0">
+          <a href=""><i class="bi bi-twitter-x"></i></a>
+          <a href=""><i class="bi bi-facebook"></i></a>
+          <a href=""><i class="bi bi-instagram"></i></a>
+          <a href=""><i class="bi bi-linkedin"></i></a>
+        </div>
+
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <script>
+    var stripe = Stripe("your_publishable_key"); // Replace with your Stripe publishable key
+  
+    document.getElementById("donate-button").addEventListener("click", function(event) {
+        event.preventDefault();
+        
+        fetch("/create-checkout-session", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ amount: document.getElementById("amount").value })
+        })
+        .then(response => response.json())
+        .then(session => {
+            return stripe.redirectToCheckout({ sessionId: session.id });
+        })
+        .catch(error => console.error("Error:", error));
+    });
+  </script>
+
+<script>
+  document.getElementById("donate-btn").addEventListener("click", function () {
+    var paymentMethod = document.getElementById("payment").value;
+
+    if (paymentMethod === "credit_card") {
+      document.getElementById("credit-card-modal").style.display = "block";
+    } else if (paymentMethod === "paypal") {
+      document.getElementById("paypal-modal").style.display = "block";
+    }
+  });
+
+  // Close modal when clicking the close button
+  document.querySelectorAll(".close").forEach(closeBtn => {
+    closeBtn.addEventListener("click", function () {
+      document.getElementById("credit-card-modal").style.display = "none";
+      document.getElementById("paypal-modal").style.display = "none";
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      const donateBtn = document.getElementById("donate-btn");
+      const amountInput = document.getElementById("amount");
+      const paymentMethod = document.getElementById("payment");
+  
+      const creditCardModal = document.getElementById("credit-card-modal");
+      const paypalModal = document.getElementById("paypal-modal");
+  
+      const closeButtons = document.querySelectorAll(".close");
+  
+      // Initially disable the donate button
+      donateBtn.disabled = true;
+  
+      // Enable the button only when a valid amount is entered
+      amountInput.addEventListener("input", function () {
+          if (amountInput.value.trim() !== "" && !isNaN(amountInput.value) && amountInput.value > 0) {
+              donateBtn.disabled = false;
+          } else {
+              donateBtn.disabled = true;
+          }
+      });
+  
+      donateBtn.addEventListener("click", function (event) {
+          event.preventDefault(); // Prevent form submission
+  
+          const amount = amountInput.value.trim();
+          const selectedPayment = paymentMethod.value;
+  
+          // Open the correct modal based on payment method
+          if (selectedPayment === "credit_card") {
+              creditCardModal.style.display = "block";
+          } else if (selectedPayment === "paypal") {
+              paypalModal.style.display = "block";
+          }
+      });
+  
+      // Close modals when the close button is clicked
+      closeButtons.forEach(button => {
+          button.addEventListener("click", function () {
+              creditCardModal.style.display = "none";
+              paypalModal.style.display = "none";
+          });
+      });
+  
+      // Close modals when clicking outside of them
+      window.addEventListener("click", function (event) {
+          if (event.target === creditCardModal) {
+              creditCardModal.style.display = "none";
+          } else if (event.target === paypalModal) {
+              paypalModal.style.display = "none";
+          }
+      });
+  });
+  </script>
+  
+
+</body>
+
+</html>
